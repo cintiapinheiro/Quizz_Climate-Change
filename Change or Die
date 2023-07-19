@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Change or Die</title>
+</head>
+
+<body>
+  <h1>Change or Die</h1>
+  <p>Responda as perguntas abaixo:</p>
+  <form>
+    <p><strong>1. Como podemos diminuir nossa pegada de carbono?</strong></p>
+    <label><input type="radio" name="pergunta1" value="a"> Reduzindo o consumo de plástico (CO²)</label><br>
+    <label><input type="radio" name="pergunta1" value="b"> Comprando em market places, ajudando os vendedores a terem uma fonte de renda</label><br>
+    <label><input type="radio" name="pergunta1" value="c"> Economizando água para o agronegócio</label><br><br>
+
+    <p><strong>2. De que forma, ações individuais ou coletivas, podem pressionar empresas e o poder público a mitigar os efeitos das mudanças climáticas?</strong></p>
+    <label><input type="radio" name="pergunta2" value="a"> Iniciando uma campanha "somos todes Greta Thunberg"?</label><br>
+    <label><input type="radio" name="pergunta2" value="b"> Apoiar o crescimento econômico de grileiros, madereiros e agroboys</label><br>
+    <label><input type="radio" name="pergunta2" value="c"> Boicote a empresas que abertamente não colaboram com a transição e participação política ativa. </label><br><br>
+
+    <p><strong>3. Estima-se que em menos de 10 anos a temperatura global do planeta aumentará 1,5º. Quais as consequências?</strong></p>
+    <label><input type="radio" name="pergunta3" value="a"> Populações autoctones de localidades frias poderão finalmente usar regata</label><br>
+    <label><input type="radio" name="pergunta3" value="b"> A indissociabilidade das crises trarão consequências para todas as esferas da vida em sociedade que também terá que lidar com os impactos irreversíveis dessa nova temperatura</label><br><br>
+    <label><input type="radio" name="pergunta3" value="c"> Os brasileiros comerão cada vez mais picanhas em churrasco e a produção de piscinas, tanques e caixas d´agua atingirão números nunca antes vistos na história desse país</label><br><br>
+
+    <p><strong>4. Qual descoberta recente do IPCC é a mais alarmante?</strong></p>
+    <label><input type="radio" name="pergunta4" value="a"> O aumento do nível do mar é inevitável e o planeta já atingiu o ponto de não retorno</label><br>
+    <label><input type="radio" name="pergunta4" value="b"> As gaivotas desenvolveram a capacidade de prever eventos climáticos extremos, além de emitir sons que poderiam alertar os humanos, mas preferiram ficar caladas </label><br>
+    <label><input type="radio" name="pergunta4" value="c"> A energia térmica gerada por abraços tem um impacto direto no aumento das temperaturas globais. </label><br><br>
+
+    <p><strong>5. Que consequências o ecossistema sofre com o branqueamento dos corais?</strong></p>
+    <label><input type="radio" name="pergunta5" value="a"> As Belugas começam a migrar para grandes recifes</label><br>
+    <label><input type="radio" name="pergunta5" value="b"> Os Guarás vão precisar se alimentar de ruivas</label><br>
+    <label><input type="radio" name="pergunta5" value="c"> Efeito cascata em toda a biodiversidade marinha, culminando no desaparecimento de espécies, até o aumento da temperatura das águas </label><br><br>
+
+    
+  </form>
+  <button type="button" onclick="verificarRespostas()">Verificar respostas</button>
+</form>
+
+<script>
+function verificarRespostas() {
+  var respostasCorretas = ["a", "c", "b", "a", "c"];
+  var numPerguntas = 5;
+  var pontos = 0;
+
+  for (var i = 1; i <= numPerguntas; i++) {
+    var radios = document.getElementsByName("pergunta" + i);
+    for (var j = 0; j < radios.length; j++) {
+      var radio = radios[j];
+      if (radio.value == respostasCorretas[i - 1] && radio.checked) {
+        pontos++;
+      }
+    }
+  }
+
+  var resultado = "Você acertou " + pontos + " de " + numPerguntas + " perguntas.";
+  alert(resultado);
+}
+</script>
